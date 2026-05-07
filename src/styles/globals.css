@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --mx: 50vw;
+  --my: 50vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(0, 217, 255, 0.12), transparent 18rem),
+    radial-gradient(circle at 78% 12%, rgba(255, 43, 214, 0.13), transparent 24rem),
+    radial-gradient(circle at 12% 85%, rgba(155, 92, 255, 0.15), transparent 26rem),
+    #02020a;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+@layer components {
+  .section-shell {
+    @apply relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32;
+  }
+
+  .glass-button {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-ion/40 bg-white/[0.07] px-6 py-4 font-semibold text-white shadow-neon backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-ion/70 hover:bg-ion/15;
+  }
+
+  .glass-button-secondary {
+    @apply border-white/15 bg-white/[0.035] hover:border-flux/60 hover:bg-flux/10;
+  }
+
+  .holo-input {
+    @apply w-full rounded-2xl border border-white/10 bg-void/50 px-5 py-4 text-white outline-none backdrop-blur-xl transition placeholder:text-white/30 focus:border-ion/60 focus:bg-ion/5 focus:shadow-neon;
+  }
+}
+
+.hologram-text {
+  background: linear-gradient(105deg, #fff 4%, #aeefff 20%, #9b5cff 42%, #ff2bd6 64%, #fff 86%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 42px rgba(0, 217, 255, 0.18);
+  animation: shimmer 6s linear infinite;
+}
+
+.typing {
+  position: relative;
+}
+
+.typing::after {
+  content: '';
+  display: inline-block;
+  height: 1.15em;
+  width: 2px;
+  margin-left: 0.3rem;
+  transform: translateY(0.18em);
+  background: #00d9ff;
+  box-shadow: 0 0 18px #00d9ff;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+.mesh-grid {
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 92, 255, 0.09) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 72%);
+  animation: gridDrift 16s linear infinite;
+}
+
+.spotlight {
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.13), transparent 12rem),
+    linear-gradient(180deg, transparent 0%, rgba(2, 2, 10, 0.55) 100%);
+}
+
+.service-card {
+  clip-path: polygon(0 0, calc(100% - 2rem) 0, 100% 2rem, 100% 100%, 0 100%);
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(0, 217, 255, 0.18);
+  border-radius: 999px;
+  box-shadow: inset 0 0 30px rgba(155, 92, 255, 0.08), 0 0 40px rgba(0, 217, 255, 0.08);
+}
+
+.tech-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  min-width: 7rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.065);
+  padding: 0.75rem 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.14);
+  transform: rotate(var(--angle)) translate(14rem) rotate(var(--reverse-angle));
+  transform-origin: 0 0;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.animation-delay-2000 {
+  animation-delay: -2s;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 220% center;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes gridDrift {
+  to {
+    background-position: 108px 54px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hologram-text {
+    overflow-wrap: anywhere;
+  }
+
+  .tech-node {
+    min-width: 5.9rem;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.68rem;
+    transform: rotate(var(--angle)) translate(9.4rem) rotate(var(--reverse-angle));
+  }
+}
+
+@media (max-width: 420px) {
+  .glass-button {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tech-node {
+    min-width: 5rem;
+    gap: 0.25rem;
+    padding: 0.55rem 0.6rem;
+    font-size: 0.62rem;
+    transform: rotate(var(--angle)) translate(8.15rem) rotate(var(--reverse-angle));
+  }
+}
