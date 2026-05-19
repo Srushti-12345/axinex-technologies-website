@@ -20,7 +20,10 @@ import useLenis from './hooks/useLenis.js';
 import useGsapReveals from './hooks/useGsapReveals.js';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('architects') !== '1' && params.get('preview') !== '1';
+  });
   useLenis();
   useGsapReveals();
 
@@ -28,6 +31,14 @@ export default function App() {
     const timer = window.setTimeout(() => setLoading(false), 1900);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (loading || !window.location.hash) return undefined;
+    const timer = window.setTimeout(() => {
+      document.querySelector(window.location.hash)?.scrollIntoView({ block: 'start' });
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [loading]);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-void text-white selection:bg-ion/30 selection:text-white">

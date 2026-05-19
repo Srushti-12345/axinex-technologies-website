@@ -8,21 +8,36 @@ export default function About() {
     <section id="about" className="section-shell">
       <SectionHeader
         eyebrow="About Axinex"
-        title="Reliable, scalable, and customized IT solutions for digital transformation."
-        text="Axinex Technologies is a structured, service-based software solutions provider capable of delivering customized software, mobile applications, web applications, and dynamic websites through a professional and compliant execution framework."
+        title="AI-Driven Software Solutions for Future-Ready Businesses"
+        text="Axinex Technologies develops scalable web platforms, mobile applications, and AI-powered software solutions tailored for startups, enterprises, and organizations seeking digital transformation."
       />
-      <div className="mt-16 grid gap-5 md:grid-cols-4">
+      <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat) => (
-          <TiltCard key={stat.label} className="min-h-44">
-            <div className="font-display text-5xl font-semibold text-white">
-              <CountUp value={stat.value} />
-              <span className="text-ion">{stat.suffix}</span>
-            </div>
-            <p className="mt-4 text-sm uppercase tracking-[0.22em] text-white/50">{stat.label}</p>
+          <TiltCard key={stat.label} className="min-h-56">
+            {stat.value !== null ? (
+              <div className="font-display text-5xl font-semibold text-white">
+                <CountUp value={stat.value} />
+                <span className="text-ion">{stat.suffix}</span>
+              </div>
+            ) : (
+              <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-plasma via-ion to-flux shadow-neon" />
+            )}
+            <h3 className={`${stat.value !== null ? 'mt-5' : ''} font-display text-2xl font-semibold leading-tight text-white`}>
+              {stat.label}
+            </h3>
+            <p className="mt-4 text-sm leading-6 text-white/58">{stat.subtitle}</p>
           </TiltCard>
         ))}
       </div>
-      <div className="relative mt-20 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {['Vision', 'Mission', 'Values'].map((item) => (
+          <TiltCard key={item} className="min-h-40">
+            <div className="mb-5 h-1 w-14 rounded-full bg-gradient-to-r from-ion to-flux shadow-neon" />
+            <h3 className="font-display text-2xl font-semibold text-white">{item}</h3>
+          </TiltCard>
+        ))}
+      </div>
+      <div className="relative mt-24 grid gap-8 lg:grid-cols-3">
         <div className="absolute left-4 top-10 hidden h-px w-[calc(100%-2rem)] bg-gradient-to-r from-transparent via-ion/50 to-transparent lg:block" />
         {timeline.map((item, index) => (
           <div key={item.title} data-reveal className="relative">

@@ -26,15 +26,15 @@ export default function Hero() {
             variants={fadeUp}
             className="typing mt-7 max-w-2xl text-lg leading-8 text-cyan-50/70 sm:text-2xl"
           >
-            A forward-thinking software solutions company empowering businesses, institutions, and government organizations through innovative digital technologies.
+            From custom software development to AI automation, Axinex delivers future-ready digital solutions tailored for startups and enterprises.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="#projects" className="glass-button group">
-              Explore Services
+              Explore Solutions
               <ArrowDown className="h-4 w-4 transition group-hover:translate-y-1" />
             </a>
             <a href="#contact" className="glass-button glass-button-secondary">
-              Accelerate Transformation
+              Start Your Project
               <Cpu className="h-4 w-4" />
             </a>
           </motion.div>

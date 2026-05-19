@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import SectionHeader from '../components/shared/SectionHeader.jsx';
 import { team } from '../data/siteData.js';
 
@@ -28,7 +28,7 @@ export default function Team() {
               <h3 className="relative mt-7 font-display text-xl font-semibold">{member.name}</h3>
               <p className="relative mt-2 text-sm uppercase tracking-[0.22em] text-white/50">{member.role}</p>
               <div className="relative mt-7 flex justify-center gap-3">
-                {[Linkedin, Github, Mail].map((Social, socialIndex) => (
+                {[Linkedin, Mail].map((Social, socialIndex) => (
                   <button
                     key={socialIndex}
                     aria-label="Team link"

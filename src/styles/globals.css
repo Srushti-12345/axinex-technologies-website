@@ -30,6 +30,19 @@ body {
   font-family: Inter, system-ui, sans-serif;
 }
 
+html.architects-open,
+html.architects-open body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.architects-overlay {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+  overflow-x: hidden;
+}
+
 button,
 a,
 input,

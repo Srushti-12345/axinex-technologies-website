@@ -24,10 +24,10 @@ import {
 export const navItems = ['About', 'Services', 'Sectors', 'Process', 'Tech', 'Contact'];
 
 export const stats = [
-  { value: 5, suffix: '', label: 'core services' },
-  { value: 2, suffix: '', label: 'private and government sectors' },
-  { value: 1, suffix: '', label: 'professional execution framework' },
-  { value: 1, suffix: '', label: 'audit-ready documentation model' },
+  { value: 5, suffix: '+', label: 'Digital Solutions', subtitle: 'Web, mobile, AI & cloud services.' },
+  { value: null, suffix: '', label: 'Diverse Industry Experience', subtitle: 'Serving startups, businesses & institutions.' },
+  { value: null, suffix: '', label: 'Agile Development Process', subtitle: 'Fast, scalable & structured workflows.' },
+  { value: null, suffix: '', label: 'Enterprise-Grade Delivery', subtitle: 'Secure, organized & scalable systems.' },
 ];
 
 export const timeline = [
