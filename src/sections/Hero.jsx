@@ -24,7 +24,7 @@ export default function Hero() {
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="typing mt-7 max-w-2xl text-lg leading-8 text-cyan-50/70 sm:text-2xl"
+            className="mt-7 max-w-2xl text-lg leading-8 text-cyan-50/70 sm:text-2xl"
           >
             From custom software development to AI automation, Axinex delivers future-ready digital solutions tailored for startups and enterprises.
           </motion.p>
