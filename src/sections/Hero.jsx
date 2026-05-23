@@ -10,8 +10,8 @@ export default function Hero() {
       <div className="mesh-grid absolute inset-0 opacity-70" />
       <div className="spotlight absolute inset-0" />
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-void to-transparent" />
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-center px-4 pb-20 sm:px-6">
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-4xl">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl items-center justify-center px-4 pb-20 sm:px-6">
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="w-full max-w-4xl lg:-translate-x-24">
           <motion.div
             variants={fadeUp}
             className="mb-6 inline-flex items-center gap-3 rounded-full border border-ion/30 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100 shadow-neon backdrop-blur-xl"

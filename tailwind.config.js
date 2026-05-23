@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Urbanist', 'Inter', 'system-ui', 'sans-serif'],
+        body: ['Urbanist', 'Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         void: '#02020a',

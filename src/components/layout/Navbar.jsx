@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Menu, Sparkles } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { navItems } from '../../data/siteData.js';
 
@@ -16,10 +16,9 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <a href="#hero" className="group flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-ion/40 bg-white/[0.06] shadow-neon">
-            <Sparkles className="h-5 w-5 text-ion transition-transform duration-500 group-hover:rotate-45" />
+          <span className="flex h-11 w-28 items-center overflow-hidden rounded-full border border-ion/40 bg-white/[0.92] px-3 shadow-neon sm:w-32">
+            <img src="/assets/axinex-logo-cropped.jpeg" alt="Axinex Technologies" className="h-full w-full object-contain" />
           </span>
-          <span className="font-display text-lg font-semibold tracking-[0.28em]">AXINEX</span>
         </a>
         <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1 backdrop-blur-xl lg:flex">
           {navItems.map((item) => (
@@ -31,13 +30,13 @@ export default function Navbar() {
               {item}
             </a>
           ))}
+          <a
+            href="#contact"
+            className="rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-white/60 transition hover:bg-white/10 hover:text-white"
+          >
+            Contact
+          </a>
         </div>
-        <a
-          href="#contact"
-          className="hidden rounded-full border border-ion/40 bg-ion/10 px-5 py-2.5 text-sm font-semibold text-cyan-50 shadow-neon transition hover:-translate-y-0.5 hover:bg-ion/20 md:block"
-        >
-          Contact
-        </a>
         <button
           aria-label="Toggle navigation"
           onClick={() => setOpen((value) => !value)}
@@ -62,6 +61,13 @@ export default function Navbar() {
               {item}
             </a>
           ))}
+          <a
+            onClick={() => setOpen(false)}
+            href="#contact"
+            className="rounded-xl px-4 py-3 text-sm uppercase tracking-[0.2em] text-white/70 hover:bg-white/10 hover:text-white"
+          >
+            Contact
+          </a>
         </motion.div>
       )}
     </motion.header>

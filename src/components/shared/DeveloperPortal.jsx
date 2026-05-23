@@ -42,7 +42,6 @@ const architects = [
 ];
 
 function ArchitectCard({ architect, index }) {
-  const [colored, setColored] = useState(false);
   const initials = architect.name
     .split(' ')
     .map((part) => part[0])
@@ -58,9 +57,8 @@ function ArchitectCard({ architect, index }) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,217,255,0.16),transparent_46%),linear-gradient(135deg,rgba(155,92,255,0.11),transparent,rgba(255,43,214,0.12))] opacity-80" />
       <button
         type="button"
-        onClick={() => setColored((value) => !value)}
         className="relative block w-full max-w-full overflow-hidden rounded-[1.2rem] border border-white/10 bg-void/70"
-        aria-label={`Toggle color portrait for ${architect.name}`}
+        aria-label={`${architect.name} portrait`}
       >
         {architect.image ? (
           <motion.img
@@ -68,17 +66,13 @@ function ArchitectCard({ architect, index }) {
             alt={architect.name}
             whileHover={{ scale: 1.045 }}
             whileTap={{ scale: 0.985 }}
-            className={`aspect-[4/5] w-full max-w-full object-cover object-center transition duration-700 ease-out ${
-              colored ? 'grayscale-0 saturate-125' : 'grayscale'
-            }`}
+            className="aspect-[4/5] w-full max-w-full object-cover object-center grayscale transition duration-700 ease-out group-hover:grayscale-0 group-hover:saturate-125"
           />
         ) : (
           <motion.div
             whileHover={{ scale: 1.035 }}
             whileTap={{ scale: 0.985 }}
-            className={`grid aspect-[4/5] w-full max-w-full place-items-center bg-gradient-to-br from-white/10 via-ion/10 to-flux/10 transition duration-700 ${
-              colored ? 'grayscale-0' : 'grayscale'
-            }`}
+            className="grid aspect-[4/5] w-full max-w-full place-items-center bg-gradient-to-br from-white/10 via-ion/10 to-flux/10 grayscale transition duration-700 group-hover:grayscale-0"
           >
             <div className="grid h-28 w-28 place-items-center rounded-full border border-ion/35 bg-void/70 font-display text-4xl font-semibold text-white shadow-neon">
               {initials}
@@ -88,7 +82,7 @@ function ArchitectCard({ architect, index }) {
       </button>
 
       <div className="relative pt-5">
-        <h3 className="font-display text-2xl font-semibold leading-tight text-white">{architect.name}</h3>
+        <h3 className="font-display whitespace-nowrap text-xl font-semibold leading-tight text-white xl:text-[1.35rem]">{architect.name}</h3>
         <p className="mt-2 text-sm font-semibold text-ion">{architect.role}</p>
         <div className="mt-5 flex gap-3">
           <a
@@ -178,8 +172,8 @@ export default function DeveloperPortal() {
                   <X className="h-5 w-5" />
                 </button>
 
-                <div className="max-w-3xl pr-10 sm:pr-16">
-                  <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-ion/30 bg-ion/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-cyan-50 shadow-neon">
+                <div className="mx-auto max-w-3xl px-2 text-center sm:px-10">
+                  <div className="mb-5 inline-flex items-center justify-center gap-3 rounded-full border border-ion/30 bg-ion/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-cyan-50 shadow-neon">
                     <Sparkles className="h-4 w-4 text-ion" />
                     Digital Architects
                   </div>

@@ -21,7 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-export const navItems = ['About', 'Services', 'Sectors', 'Process', 'Tech', 'Contact'];
+export const navItems = ['About', 'Services', 'Sectors', 'Process', 'Tech'];
 
 export const stats = [
   { value: 5, suffix: '+', label: 'Digital Solutions', subtitle: 'Web, mobile, AI & cloud services.' },
@@ -109,10 +109,11 @@ export const projects = [
 ];
 
 export const team = [
-  { name: 'Technical Excellence', role: 'Strong technical foundation', icon: Gem },
-  { name: 'Project Management', role: 'Professional execution', icon: Sparkles },
-  { name: 'Governance Standards', role: 'Compliant framework', icon: ShieldCheck },
-  { name: 'Customer Focus', role: 'Customer-focused strategies', icon: LockKeyhole },
+  { image: '/assets/president.jpeg' },
+  { image: '/assets/director.jpeg' },
+  { image: '/assets/cofounder.jpeg' },
+  { image: '/assets/senior architect.jpeg' },
+  { image: '/assets/senior architect 2.jpeg' },
 ];
 
 export const sectors = [
