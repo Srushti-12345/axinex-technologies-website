@@ -88,8 +88,8 @@ export default function Contact() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr_1.1fr]">
           <div>
             <a href="#hero" className="inline-flex items-center gap-3">
-              <span className="flex h-12 w-36 items-center overflow-hidden rounded-full border border-ion/40 bg-white/[0.92] px-4 shadow-neon">
-                <img src="/assets/axinex-logo-cropped.jpeg" alt="Axinex Technologies" className="h-full w-full object-contain" />
+              <span className="flex h-12 w-40 items-center justify-center overflow-hidden rounded-full border border-ion/40 bg-white px-5 shadow-neon">
+                <img src="/assets/axinex-logo-transparent.png" alt="Axinex Technologies" className="block h-auto w-full object-contain" />
               </span>
             </a>
             <p className="mt-6 max-w-sm leading-7 text-white/60">

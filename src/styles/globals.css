@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: auto;
+  background: #02020a;
 }
 
 body {
@@ -28,6 +29,11 @@ body {
     radial-gradient(circle at 12% 85%, rgba(155, 92, 255, 0.15), transparent 26rem),
     #02020a;
   font-family: Urbanist, system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background: #02020a;
 }
 
 html.architects-open,
@@ -150,6 +156,28 @@ textarea {
 
 .marquee-mask {
   mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.showcase-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 217, 255, 0.48) rgba(255, 255, 255, 0.06);
+  scroll-padding-inline: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.showcase-scroller::-webkit-scrollbar {
+  height: 0.55rem;
+}
+
+.showcase-scroller::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.showcase-scroller::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(155, 92, 255, 0.8), rgba(0, 217, 255, 0.8), rgba(255, 43, 214, 0.75));
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.24);
 }
 
 .animation-delay-2000 {

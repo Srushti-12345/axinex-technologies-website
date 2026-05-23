@@ -16,8 +16,8 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <a href="#hero" className="group flex items-center gap-3">
-          <span className="flex h-11 w-28 items-center overflow-hidden rounded-full border border-ion/40 bg-white/[0.92] px-3 shadow-neon sm:w-32">
-            <img src="/assets/axinex-logo-cropped.jpeg" alt="Axinex Technologies" className="h-full w-full object-contain" />
+          <span className="flex h-11 w-32 items-center justify-center overflow-hidden rounded-full border border-ion/40 bg-white px-4 shadow-neon sm:w-36">
+            <img src="/assets/axinex-logo-transparent.png" alt="Axinex Technologies" className="block h-auto w-full object-contain" />
           </span>
         </a>
         <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1 backdrop-blur-xl lg:flex">
